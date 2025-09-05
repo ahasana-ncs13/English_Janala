@@ -20,15 +20,83 @@
     <!-- stylesheets -->
      <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body class="poppins-regular">
+    <!-- header  -->
     <header>
+        <!-- navbar section  -->
+        <div class="navbar bg-base-100 shadow-sm">
+<div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+        
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        <li>
+            <a><i class="fa-solid fa-circle-question"></i>FAQ</a>
+        </li>
+        <li>
+            <a><i class="fa-solid fa-book-open"></i>Learn</a>
+        </li>
+        
+        <li>
+            <a><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+        </li>
+        
+      </ul>
+    </div>
+    <a class="btn btn-ghost text-xl">
+        <h3>English</h3>
+        <img src="./assets/logo.png" alt="">
+        <h3 class="hind-siliguri-regular ">জানালা</h3>
+    </a>
+  </div>
+  <div class="navbar-end hidden lg:flex  ">
+    <ul class="menu menu-horizontal px-1 flex gap-5">
+      <li>
+        <button class="btn btn-outline btn-primary"><i class="fa-solid fa-circle-question"></i>FAQ</button>
+     </li>
+      <li>
+       <button class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i>Learn</button>
+      </li>
+      <li><button class="btn btn-outline btn-primary"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
+    </li>
+    </ul>
+  </div>
+        </div>
 
+        <!-- banner section  -->
+         <section class="banner flex w-11/12 mx-auto items-center gap-5 md:flex-row flex-col-reverse">
+            <div class="banner-container flex-1">
+                <h2 class="banner-title font-bold text-5xl"><span class="text-[#00BCFF]">English</span> is Easy!!</h2>
+                <p class="banner-details hind-siliguri-regular font-medium text-2xl text-[#18181B] mt-5">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+                <form action="" class="my-5">
+                    <input type="text" placeholder="Enter Your Name" class="input block" />
+                    <input type="text" placeholder=".................." class="input block my-5" />
+                    <button class="btn btn-primary">Get Started</button>
+                </form>
+            </div>
+            <div class="flex-1 ">
+                <img src="./assets/hero-student.png" alt="">
+            </div>
+         </section>
     </header>
+    <!-- main  -->
     <main>
+        <!-- learn section  -->
+        <section  class="learn ">
+            <h2 class="learn-title font-bold text-4xl text-center"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h2>
 
+            <div id="learn-container" class="flex justify-center gap-5 mt-10 flex-wrap">
+
+            </div>
+
+        </section>
     </main>
     <footer>
-        
+
     </footer>
     <script src="./script.js"></script>
 </body>
