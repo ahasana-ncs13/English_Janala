@@ -20,6 +20,7 @@
     <!-- stylesheets -->
      <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body class="poppins-regular">
     <!-- header  -->
     <header>
@@ -94,11 +95,21 @@
             </div>
 
         </section>
+        
+        <!-- search section  -->
+    <div class="join flex items-center justify-center mt-10">
+  <div>
+    <label class="input validator join-item">
+      <input id="search-input" type="text" placeholder="search vocabulary here" required />
+    </label>
+  </div>
+  <button id="search-btn" class="btn btn-primary join-item">search</button>
+</div>
 
         <!-- select section  -->
          <section class="selectLesson mt-10 w-11/12  bg-[#F8F8F8] mx-auto  p-6 mb-10 rounded-3xl">
 
-            <div id="Lessoncard-container" class="grid grid-cols-3 gap-5">
+            <div id="Lessoncard-container" class="grid  gap-5 md:grid-cols-3 grid-cols-1">
                 <div class="selectLesson-container text-center col-span-full py-10">
                 <p class="text-[#79716B] hind-siliguri-regular text-sm mb-4">আপনি এখনো কোন Lesson Select করেন নি</p>
                 
@@ -115,20 +126,21 @@
 <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
   <div class="modal-box">
 
-    <div id="details-container" class="">
+    <div id="details-container">
 
     </div>
 
     <div class="modal-action">
       <form method="dialog">
         <!-- if there is a button in form, it will close the modal -->
-        <button class="btn">Close</button>
+        <button class="btn btn-primary">Complete Learning</button>
       </form>
     </div>
   </div>
 </dialog>
 
     </main>
+
     <footer>
 
     </footer>

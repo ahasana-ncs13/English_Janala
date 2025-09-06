@@ -1,3 +1,10 @@
+let displaySynonym =(arr)=>{
+    let synonymall = arr.map(el=>
+       ` <span class="btn bg-[#1A91FF]/15">${el}</span>`);
+
+        return synonymall.join(" ");
+
+}
 const APIlesson=()=>{
     fetch("https://openapi.programming-hero.com/api/levels/all")
     .then(res => res.json())
@@ -27,12 +34,8 @@ let displayWordDetail=(details)=>{
             <p class="text-2xl mt-2">${details.sentence}</p>
             </div>
             <p class="hind-siliguri-regular font-medium text-2xl mb-3">সমার্থক শব্দ গুলো</p>
-            <div class="text-2xl flex justify-start gap-5 mb-6">
-                <p class="bg-[#EDF7FF] rounded-2xl p-4">${details.synonyms[0]}</p>
-                <p class="bg-[#EDF7FF] rounded-2xl p-4">${details.synonyms[1]}</</p>
-                <p class="bg-[#EDF7FF] rounded-2xl p-4">${details.synonyms[2]}</</p>
-            </div>
-            <button class="btn btn-primary">Complete Learning</button>
+            <div class="text-2xl flex justify-start gap-5 mb-6"> 
+                   ${ displaySynonym(details.synonyms) } </div>
         </div>
     `
     document.getElementById("my_modal_5").showModal()
@@ -90,7 +93,7 @@ let lessoncard = (words)=>{
                     <i class="fa-solid fa-circle-info"></i>
                      </button>
 
-                    <button class="btn bg-[#1A91FF]/10">
+                    <button onclick="pronounceWord('${word.word}')" class="btn bg-[#1A91FF]/10">
                     <i class="fa-solid fa-volume-low"></i>
                      </button>
             </div>
@@ -114,3 +117,26 @@ const displayLesson=(lessons)=>{
 
   
 }
+
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
+
+document.getElementById("search-btn").addEventListener("click",function(){
+     let input = document.getElementById("search-input");
+     let inputvalue = input.value.trim().toLowerCase();
+     input.value=" ";
+     fetch("https://openapi.programming-hero.com/api/words/all")
+     .then(res => res.json())
+     .then(data=>{
+        let allWords=data.data
+        let filterWords=allWords.filter(word => word.word.toLowerCase().includes(inputvalue )
+        )
+        lessoncard(filterWords);
+         lessonRemove();
+    });
+
+     
+})
